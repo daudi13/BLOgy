@@ -1,7 +1,5 @@
 class UsersController < ApplicationContoller
-  def index
-  end
+  def index; end
 
-  def show
-  end
+  def shoe; end
 end
