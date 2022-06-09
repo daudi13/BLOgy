@@ -8,7 +8,7 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Posts')
       expect(response.body).to include('Display posts')
     end
-  end 
+  end
 
   describe 'GET /show' do
     it 'should return the correct reponse' do
