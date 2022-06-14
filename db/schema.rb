@@ -16,21 +16,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_150857) do
 
   create_table "comments", force: :cascade do |t|
     t.bigint "author_id", null: false
-    t.bigint "posts_id", null: false
+    t.bigint "post_id", null: false
     t.string "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_comments_on_author_id"
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.bigint "author_id", null: false
-    t.bigint "posts_id", null: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_likes_on_author_id"
-    t.index ["posts_id"], name: "index_likes_on_posts_id"
+    t.index ["post_id"], name: "index_likes_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -53,9 +53,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_150857) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "posts", column: "posts_id"
+  add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users", column: "author_id"
-  add_foreign_key "likes", "posts", column: "posts_id"
+  add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users", column: "author_id"
   add_foreign_key "posts", "users", column: "author_id"
 end
