@@ -11,6 +11,6 @@ class Post < ApplicationRecord
   private
 
   def post_counter
-    post.increment!(:likes_counter)
+    post.increment!(:posts_counter)
   end
 end
