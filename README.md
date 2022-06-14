@@ -18,6 +18,16 @@ I will be building the Blog app for three weeks. Here is the list of projects th
 - Project 11: Add API endpoints.
 - Exercise: API documentation.
 
+## ERD diagram
+![](./blog_app_erd.png)
+
+## Getting started
+
+- Run `bundle install` to get the dependecies
+- Run `rails s` to start  the server
+- Open `https://localhost:3000` in your browser
+- to run test `bundle exec rspec`
+
 ## Author 
 
 👤 **David Owuor Ouma**
