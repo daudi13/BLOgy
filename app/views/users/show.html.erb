@@ -3,13 +3,13 @@
 <div class="user-wrapper">
 <img src="" alt="avatar">
 <div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
+<h3><%= @user.name %></h3>
+<p>Number of Post:<span><%= @user.posts_counter || 0 %></span></p>
 </div>
 </div>
 <div class="bio">
 <h3>Bio</h3>
-<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+<p><%= @user.bio %></p>
 </div>
 </div>
 <div class="post-box">
