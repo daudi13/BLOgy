@@ -1,44 +1,5 @@
 <div class="container">
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3>Morris Jonson</h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
+<%= @users.each do |user| %>
+  <%= render partial: 'user', locals: {user: user} %>
+  <% end %>
 </div>
