@@ -13,36 +13,20 @@
 </div>
 </div>
 <div class="post-box">
-<div class="post">
-<h4>Post <span>1</span></h4>
+<% @user.posts.each do |post| %>
+  <div class="post">
+<h4>Post <span><%= post.id %></span></h4>
 <p>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
+<%= post.text %>
 </p>
 <div class="post-info">
-<small>Comments: <span>x</span></small>
-<small>Likes: <span>Y</span></small>
+<small>Comments: <span><%= post.comments_counter || 0%></span></small>
+<small>Likes: <span><%= post.likes_counter || 0 %></span></small>
 </div>
 </div>
-<div class="post">
-<h4>Post <span>1</span></h4>
-<p>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-</p>
-<div class="post-info">
-<small>Comments: <span>x</span></small>
-<small>Likes: <span>Y</span></small>
+<%end%>
 </div>
-</div>
-<div class="post">
-<h4>Post <span>1</span></h4>
-<p>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-</p>
-<div class="post-info">
-<small>Comments: <span>x</span></small>
-<small>Likes: <span>Y</span></small>
-</div>
-</div>
-</div>
-<a href="">See all posts</a>
+<button class="see-all">
+<%= link_to 'Sea all posts', user_post_path(@user)%>
+</button>
 </div>
