@@ -36,4 +36,36 @@
   border-radius: 8px;
 }
 
+.user-bio {
+  width: 60%;
+  margin: 10px auto;
+  border: 2px solid black;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
 
+.user-box-post {
+  width: 60%;
+  margin: 10px auto;
+  border: 2px solid black;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
+
+.clickable {
+  text-align: center;
+}
+
+.see-posts {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  border: 2px solid black;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
+
+.users-box > button {
+  margin: 0 auto;
+  padding: 0;
+}
