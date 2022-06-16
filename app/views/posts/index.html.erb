@@ -1,2 +1,17 @@
-<h1>Posts</h1>
-<p>Display posts</p>
+<div class="posts-box">
+  <div class="user-box">
+    <div class="user-image">
+      <img src="<%= @user.photo %>" alt="avatar">
+    </div>
+    <div class="user-data">
+      <h2><%= @user.name%></h2>
+      <span class="user-posts">Number of posts: <%= @user.posts_counter%></span>
+    </div>
+  </div>
+
+  <% @user.posts.each do |post| %>
+    <%= render partial: "post", locals: { post: post } %>
+  <% end %>
+
+  <button class="pagination clickable">Pagination</button>
+</div>

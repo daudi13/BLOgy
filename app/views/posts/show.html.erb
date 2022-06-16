@@ -1,3 +1,10 @@
-<h1>Posts</h1>
-
-<p>Display post details</p>
+<div class="posts-box">
+  <div class="user-box-posts">
+    <div class="user-box-post">
+      <h4><%= @post.title %></h4>
+      <span class="user-post-content-comments">Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></span>
+      <span class="user-post-content"><%= @post.text %></span>
+    </div>
+    <%= render partial: 'comments', locals: { post: @post, comments: @post.comments }%>
+  </div>
+</div>
