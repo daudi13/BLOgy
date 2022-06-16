@@ -21,8 +21,8 @@
       <span class="user-post-content-comments">Comment: <%= post.comments_counter || 0%>, Likes : <%= post.likes_counter || 0%></span>
     </div>
     <% end %>
-  </div>
-  <button class="see-posts clickable">
-    <%= link_to 'See all posts', user_post_path(@user) %>
-  </button>
+    </div>
+    <button class="see-posts clickable">
+      <%= link_to 'See all posts', user_post_path(@user) %>
+    </button>
 </div>
