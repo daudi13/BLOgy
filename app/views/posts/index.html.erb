@@ -1,51 +1,17 @@
-<div class="post-container">
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3><%= user.name %></h3>
-<p>Number of Post:<span>x</span></p>
-</div>
-</div>
-<div class="post-box">
-<h4>Post <span>1</span></h4>
-<p>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-</p>
-<div class="post-info">
-<small>Comments: <span>x</span></small>
-<small>Likes: <span>Y</span></small>
-</div>
-<div class="comments">
+<div class="posts-bloc">
+  <div class="user-bloc">
+    <div class="user-image">
+      <img src="<%= @user.photo %>" alt="user image">
+    </div>
+    <div class="user-data">
+      <h2><%= @user.name%></h2>
+      <span class="user-posts">Number of posts: <%= @user.posts_counter%></span>
+    </div>
+  </div>
 
-</div>
-</div>
-<div class="post-box">
-<h4>Post <span>1</span></h4>
-<p>
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
-</p>
-<div class="post-info">
-<small>Comments: <span>x</span></small>
-<small>Likes: <span>Y</span></small>
-</div>
-<div class="comments">
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-</div>
-</div>
+  <% @user.posts.each do |post| %>
+    <%= render partial: "post", locals: { post: post } %>
+  <% end %>
 
-<a href="">pagination</a>
+  <button class="pagination clickable">Pagination</button>
 </div>

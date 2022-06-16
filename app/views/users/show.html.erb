@@ -1,32 +1,28 @@
-<div class="show-contailer">
-<div class="user-profile">
-<div class="user-wrapper">
-<img src="" alt="avatar">
-<div class="user-box">
-<h3><%= @user.name %></h3>
-<p>Number of Post:<span><%= @user.posts_counter || 0 %></span></p>
-</div>
-</div>
-<div class="bio">
-<h3>Bio</h3>
-<p><%= @user.bio %></p>
-</div>
-</div>
-<div class="post-box">
-<% @user.posts.each do |post| %>
-  <div class="post">
-<h4>Post <span><%= post.id %></span></h4>
-<p>
-<%= post.text %>
-</p>
-<div class="post-info">
-<small>Comments: <span><%= post.comments_counter || 0%></span></small>
-<small>Likes: <span><%= post.likes_counter || 0 %></span></small>
-</div>
-</div>
-<%end%>
-</div>
-<button class="see-all">
-<%= link_to 'Sea all posts', user_post_path(@user)%>
-</button>
+
+<div class="users-bloc">
+  <div class="user-bloc">
+    <div class="user-image">
+      <img src="<%= @user.photo %>" alt="user image">
+    </div>
+    <div class="user-data">
+      <h4 class="user-name"><%= @user.name%></h4>
+      <span class="user-posts">Number of posts: <%= @user.posts_counter || 0%></span>
+    </div>
+  </div>
+  <div class="user-bio">
+    <h4>Bio</h4>
+    <span class="user-bio-content"><%= @user.bio %></span>
+  </div>
+  <div class="user-bloc-posts">
+    <% @user.recent_posts.each do |post| %>
+    <div class="user-bloc-post">
+      <h4><a href="<%= @user.id %>/posts/<%= post.id%>"><%= post.title %></a></h4>
+      <span class="user-post-content"><%= post.text %></span>
+      <span class="user-post-content-comments">Comment: <%= post.comments_counter || 0%>, Likes : <%= post.likes_counter || 0%></span>
+    </div>
+    <% end %>
+  </div>
+  <button class="see-posts clickable">
+    <%= link_to 'See all posts', user_post_path(@user) %>
+  </button>
 </div>

@@ -1,3 +1,5 @@
-div class="comment-box">
-<h4 class="username"<%= comment.author.name%></h4>:<p class="comment"><%= co%></p>
+<div class="user-bloc-post-comments">
+  <% comments.each do |comment| %>
+    <span><%= comment.author.name %>: <%= comment.text %></span>
+  <% end %>
 </div>

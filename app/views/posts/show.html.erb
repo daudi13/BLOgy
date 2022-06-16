@@ -1,28 +1,10 @@
-<div class="show-post">
-<div class="post-bloc">
-<div class="post-header">
-<h4>Post <span class="number">1</span> by <span class="username">username</span></h4>
-<small>Comments:<span>x</span>, Likes:<span>x</span>,</small>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque porta accumsan arcu quis efficitur. In ac sem in erat eleifend iaculis. Donec vel risus facilisis nibh posuere tempus in sed nunc. Ut consequat massa vel malesuada bibendum. Aliquam ex est, tempor sit amet auctor non, laoreet nec diam. Quisque lobortis viverra ultricies. Cras laoreet dignissim neque ut feugiat. Integer ullamcorper auctor cursus. Nunc mollis metus tortor, in varius sem pharetra ut. Donec eu posuere lectus, ac ultricies neque. Donec a aliquet sem. Donec eget laoreet nisi. In tempor erat et cursus ornare. Pellentesque ornare, sapien egestas malesuada vulputate, enim erat ullamcorper sem, id posuere lacus nisl nec libero. Curabitur sed mauris nec enim tincidunt imperdiet. Etiam non fermentum urna, sed consequat ligula.
-</p>
-</div>
-</div>
-<div class="comments">
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-<div class="comment-box">
-<h4 class="username">Username</h4>:<p class="comment"></p>
-</div>
-</div>
+<div class="posts-bloc">
+  <div class="user-bloc-posts">
+    <div class="user-bloc-post">
+      <h4><%= @post.title %></h4>
+      <span class="user-post-content-comments">Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></span>
+      <span class="user-post-content"><%= @post.text %></span>
+    </div>
+    <%= render partial: 'comments', locals: { post: @post, comments: @post.comments }%>
+  </div>
 </div>

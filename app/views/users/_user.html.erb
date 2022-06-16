@@ -1,7 +1,9 @@
-<div class="user-wrapper">
-<img src="<%= user.photo %>" alt="avatar">
-<div class="user-box">
-<h3><%= link_to user.name, user_path(user) %></h3>
-<p>Number of Post:<span><%= user.posts_counter || 0 %></span></p>
-</div>
+<div class="user-bloc">
+  <div class="user-image">
+    <img src="<%= user.photo %>" alt="user image">
+  </div>
+  <div class="user-data">
+    <h4 class="title"><%= link_to user.name, user_path(user) %></h4>
+    <span class="user-posts">Number of posts: <%= user.posts_counter || 0 %></span>
+  </div>
 </div>
