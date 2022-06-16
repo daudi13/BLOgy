@@ -24,7 +24,7 @@ Metrics/AbcSize:
   Max: 50
 Metrics/ClassLength:
   Max: 150
-Metrics/BlockLength:
+Metrics/boxkLength:
   IgnoredMethods: ['describe']
   Max: 30
 
