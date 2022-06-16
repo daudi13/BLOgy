@@ -69,3 +69,12 @@
   margin: 0 auto;
   padding: 0;
 }
+
+.user-box-post-comments {
+  width: 60%;
+  margin: 10px auto;
+  border: 2px solid black;
+  padding: 10px 0px;
+  border-radius: 5px;
+  
+}
