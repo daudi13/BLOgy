@@ -34,4 +34,9 @@ RSpec.describe User, type: :model do
     value = @user.recent_posts.length
     expect(value).to be < 5
   end
+
+  it 'should not name be empty' do
+    @user.name = ''
+    expect(@user).to_not be_valid
+  end
 end
