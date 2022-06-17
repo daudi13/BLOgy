@@ -37,5 +37,12 @@ RSpec.describe Post, type: :model do
     @post.title = nil
     expect(@post).to_not be_valid
   end
-  
+
+  it 'should have  a title max length of 250' do
+    @post.title = 'a' * 251
+    expect(@post).to_not be_valid
+
+    @post.title = 'b' * 250
+    expect(@post).to be_valid
+  end
 end
