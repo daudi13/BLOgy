@@ -29,4 +29,9 @@ RSpec.describe User, type: :model do
     @user.posts_counter = 'one'
     expect(@user).to_not be_valid
   end
+
+    it 'should return less than 5 posts ' do
+    value = @user.recent_posts.length
+    expect(value).to be < 5
+  end
 end
