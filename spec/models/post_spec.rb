@@ -45,4 +45,9 @@ RSpec.describe Post, type: :model do
     @post.title = 'b' * 250
     expect(@post).to be_valid
   end
+
+    it 'should return less than 5 comments ' do
+    value = @post.recent_comments.length
+    expect(value).to be < 5
+  end
 end
