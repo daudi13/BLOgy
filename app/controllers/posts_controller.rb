@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(post_params)
-    redirect_to {user_posts(current_user)}
+    redirect_to { user_posts(current_user) }
   end
 
   def show

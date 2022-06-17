@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     redirect_to user_post_path(current_user, post)
   end
 
-  private 
+  private
 
   def post_params(post)
     a_post = params.require(:comment).permit(:text)
