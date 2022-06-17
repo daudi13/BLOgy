@@ -16,4 +16,12 @@ RSpec.describe User, type: :model do
     @user.posts_counter = 18
     expect(@user).to be_valid
   end
+
+  it 'should have name not equal to nil' do
+    @user.name = 'Cynthia'
+    expect(@user).to be_valid
+
+    @user.name = nil
+    expect(@user).to_not be_valid
+  end
 end
