@@ -24,4 +24,12 @@ RSpec.describe Post, type: :model do
     @post.likes_counter = 20
     expect(@post).to be_valid
   end
+
+  it 'should not have an empty title' do
+    @post.title = 'My first post'
+    expect(@post).to be_valid
+
+    @post.title = ''
+    expect(@post).to_not be_valid
+  end
 end
