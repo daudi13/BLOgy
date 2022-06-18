@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save
       flash[:notice] = 'Comment successfully created'
       redirect_to user_post_path(current_user, post)
-    else 
+    else
       flash[:alert] = 'Cannot add a comment'
       redirect_to { new_user_post(current_user) }
     end

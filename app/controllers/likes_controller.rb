@@ -12,7 +12,7 @@ class LikesController < ApplicationController
       redirect_to user_post_likes_path(current_user, post)
     else
       flash[:alert] = 'Can not like'
-      redirect_to {new_user_post(current_user)}
+      redirect_to { new_user_post(current_user) }
     end
   end
 end

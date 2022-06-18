@@ -13,10 +13,10 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = 'New post successfully created'
-      redirect_to to { user_posts(current_user)}
-    else 
+      redirect_to { user_posts(current_user) }
+    else
       flas[:alert] = 'Post not added'
-      redirect_to to { new_user_post(current_user)}
+      redirect_to { new_user_post(current_user) }
     end
   end
 

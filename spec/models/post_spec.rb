@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   before(:all) do
     @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-    @post = Post.create(title: 'Hello', author:@user) 
+    @post = Post.create(title: 'Hello', author: @user)
   end
 
   it 'should return comments_counter greater than or equal to 0' do
@@ -46,7 +46,7 @@ RSpec.describe Post, type: :model do
     expect(@post).to be_valid
   end
 
-    it 'should return less than 5 comments ' do
+  it 'should return less than 5 comments ' do
     value = @post.recent_comments.length
     expect(value).to be < 5
   end
