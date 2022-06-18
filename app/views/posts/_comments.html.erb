@@ -1,5 +1,5 @@
 <div class="user-box-post-comments">
-  <% comments.each do |comment| %>
+  <% comments.includes([:author]).each do |comment| %>
     <div><%= comment.author.name %>: <%= comment.text %></div>
   <% end %>
 </div>
