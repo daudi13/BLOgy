@@ -28,13 +28,19 @@ I will be building the Blog app for three weeks. Here is the list of projects th
 - Open `https://localhost:3000` in your browser
 - to run test `bundle exec rspec`
 
-## Author 
+## Authors
 
 👤 **David Owuor Ouma**
 
 - GitHub: [Daudi13](https://github.com/daudi13/)
 - Twitter: [@davouma](https://twitter.com/mwapesamuel4)
 - LinkedIn: [DavidOuma](https://www.linkedin.com/in/david-owour-ouma/)
+
+👤 **Zahra Aershia**
+
+- GitHub: [@ZahraArshia](https://github.com/ZahraArshia)
+- Twitter: [@ZahraArshia](https://twitter.com/ZahraArshia)
+- LinkedIn: [@ZahraArshia](https://www.linkedin.com/in/ZahraArshia/)
 
 ## 🤝 Contributing
 

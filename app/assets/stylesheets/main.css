@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+body {
+  margin: 0 auto;
+}
+
 .user-box {
   display: flex;
   align-items: center;
@@ -76,4 +80,52 @@
   border: 2px solid black;
   padding: 10px 0;
   border-radius: 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.field {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.field > * {
+  width: 100%;
+}
+
+.actions {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+a {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 150px;
+}
+
+.check label {
+  width: 100px;
+}
+
+#user_remember_me {
+  width: 30px;
+}
+
+.links {
+  color: black;
+  text-align: center;
+  margin: 0  auto;
+}
+
+.link-box {
+  text-align: center;
 }

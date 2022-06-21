@@ -11,11 +11,15 @@
   </head>
 
   <body>
-  <% flash.each do |name, msg| %>
-      <div class="alert>
-      <%= msg %> 
-      </div> 
-    <% end %>
+  <div class="link-box">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  </div>
+    <div id="sign_out">
+      <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
