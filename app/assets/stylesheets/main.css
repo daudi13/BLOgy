@@ -82,11 +82,9 @@ body {
   border-radius: 5px;
 }
 
-
 h2 {
   text-align: center;
 }
-
 
 .field {
   margin: 0 auto;
@@ -96,14 +94,6 @@ h2 {
 .field > * {
   width: 100%;
 }
-
-
-.check {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 
 .actions {
   max-width: 500px;
@@ -139,5 +129,3 @@ a {
 .link-box {
   text-align: center;
 }
-
-
