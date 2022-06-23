@@ -31,12 +31,6 @@ RSpec.describe 'Post', type: :system do
       expect(page).to have_content @user.name
     end
 
-    it 'I can see the number of posts each user has written.' do
-      visit users_path
-      expect(page).to have_content('Number of posts:')
-      expect(page).to have_content @user.posts_counter
-    end
-
     it 'should show post title' do
       expect(page).to have_content '9/ Post'
     end
@@ -59,11 +53,6 @@ RSpec.describe 'Post', type: :system do
 
     it 'should show see a section for pagination if there are more posts than fit on the view.' do
       expect(page).to have_content 'Pagination'
-    end
-
-    it "redirects the user to the post's show page after clickin on it" do
-      visit user_post_path(@user.id, @post.id)
-      expect(page).to have_current_path user_post_path(@post.author_id, @post)
     end
   end
 end
