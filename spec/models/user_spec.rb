@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before(:all) do
-    @user = User.create(name: 'Daudi', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 0,
+    @user = User.create(name: 'david', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 0,
                         bio: 'Teacher from Mexico.')
   end
 
@@ -17,8 +17,8 @@ RSpec.describe User, type: :model do
     expect(@user).to be_valid
   end
 
-  it 'should return name not equal to nil' do
-    @user.name = 'Daudi'
+  it 'should have name not equal to nil' do
+    @user.name = 'david'
     expect(@user).to be_valid
 
     @user.name = nil
@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
     expect(value).to be < 5
   end
 
-  it 'should not name be empty' do
+  it 'should have name not empty' do
     @user.name = ''
     expect(@user).to_not be_valid
   end

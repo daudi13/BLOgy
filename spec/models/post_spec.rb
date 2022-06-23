@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before(:all) do
-    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-    @post = Post.create(title: 'Hello', author: @user)
+    @user = User.create(name: 'david', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', posts_counter: 0,
+                        bio: 'Teacher from Mexico.')
+    @post = Post.create(title: 'My first post', author: @user)
   end
 
   it 'should return comments_counter greater than or equal to 0' do
@@ -17,6 +18,17 @@ RSpec.describe Post, type: :model do
     expect(@post).to be_valid
   end
 
+  it 'should return likes_counter greater than or equal to 0' do
+    @post.likes_counter = -13
+    expect(@post).to_not be_valid
+
+    @post.likes_counter = 0
+    expect(@post).to be_valid
+
+    @post.likes_counter = 19
+    expect(@post).to be_valid
+  end
+
   it 'should have likes_counter numericaly' do
     @post.likes_counter = 'one'
     expect(@post).to_not be_valid
@@ -25,7 +37,7 @@ RSpec.describe Post, type: :model do
     expect(@post).to be_valid
   end
 
-  it 'should not have an empty title' do
+  it 'should have title not empty' do
     @post.title = 'My first post'
     expect(@post).to be_valid
 
@@ -38,7 +50,7 @@ RSpec.describe Post, type: :model do
     expect(@post).to_not be_valid
   end
 
-  it 'should have  a title max length of 250' do
+  it 'should have title max length 250' do
     @post.title = 'a' * 251
     expect(@post).to_not be_valid
 

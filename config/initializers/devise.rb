@@ -1,5 +1,20 @@
 # frozen_string_literal: true
 
+#! Create custom failure for turbo
+class TurboFailureApp < Devise::FailureApp
+  def respond
+    if request_format == :turbo_stream
+      redirect
+    else
+      super
+    end
+  end
+
+  def skip_format?
+    %w(html turbo_stream */*).include? request_format.to_s
+  end
+end
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -14,7 +29,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '3280b56c9f7a131f0ac0ff40cb81694df7fa81709cfed3eca48c1567d0001c896335cf78b3ac09a6b3b4f2b3957cd93da488498b9e95eb150828305274dd7cc4'
+  # config.secret_key = '076c66a6b273b344e8f87619d88bd3fe5492178ef363b245b279991ca0dccf82ba3aa35c581a71cbc24738da35868daf4cb588951648bece9af9f8bffe2d450c'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +141,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c21cd0df8f9bd4f03151e7da284118693dceafe96b235656f703acea5f1c0286bac776f697cc30d9c5d6d242b56c3f86c79e359f4ffad8c1c1357a17309bb271'
+  # config.pepper = '9d31aeeb7659072a6caf26fb01bb3e30a916aded2051747d7374499808a6815aeda80c49051d0207150e64e0fe355f40d31c19109a7affb4525713cd8a0f44cb'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -239,6 +254,10 @@ Devise.setup do |config|
   #
   # Require the `devise-encryptable` gem when using anything other than bcrypt
   # config.encryptor = :sha512
+
+  config.authentication_keys = [ :login ]
+
+  config.navigational_formats = ['*/*', :html, :turbo_stream]
 
   # ==> Scopes configuration
   # Turn scoped views on. Before rendering "sessions/new", it will first check for

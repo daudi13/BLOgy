@@ -9,12 +9,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(post_params(post))
 
     if @comment.save
-      flash[:notice] = 'Comment successfully created'
+      flash[:notice] = 'Comment created successfully!'
       redirect_to user_post_path(current_user, post)
     else
-      flash[:alert] = 'Cannot add a comment'
+      flash[:alert] = 'Can not add a comment.'
       redirect_to { new_user_post(current_user) }
     end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+    redirect_to { user_posts(current_user) }
   end
 
   private
