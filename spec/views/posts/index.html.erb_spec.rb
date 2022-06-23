@@ -33,12 +33,8 @@ RSpec.describe 'Post', type: :system do
 
     it 'I can see the number of posts each user has written.' do
       visit users_path
-
-      @users.each do |u|
-        expect(page).to have_content('Number of posts:')
-
-        expect(page).to have_content u.posts_counter
-      end
+      expect(page).to have_content('Number of posts:')
+      expect(page).to have_content @user.posts_counter
     end
 
     it 'should show post title' do
