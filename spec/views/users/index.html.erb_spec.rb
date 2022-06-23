@@ -27,6 +27,10 @@ RSpec.describe 'user_index_path', type: :system do
       end
     end
 
+    it 'I can see the user"s profile picture' do
+      expect(page.find("#user_#{@user.id} img")['src']).to have_content @user.photo
+    end
+
     it 'I can see the number of posts each user has written.' do
       visit users_path
 
