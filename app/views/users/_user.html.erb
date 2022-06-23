@@ -1,6 +1,6 @@
-<div class="user-box">
+<div class="user-bloc" id="user_<%= user.id %>">
   <div class="user-image">
-    <img src="<%= user.photo %>" alt="avatar">
+    <img src="<%= user.photo %>" alt="user image">
   </div>
   <div class="user-data">
     <h4 class="title"><%= link_to user.name, user_path(user) %></h4>
