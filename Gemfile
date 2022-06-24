@@ -35,6 +35,8 @@ gem 'devise'
 
 gem 'letter_opener'
 
+gem 'jwt'
+
 # Use cancancan for authorization rules
 gem 'cancancan'
 
