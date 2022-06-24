@@ -43,6 +43,8 @@ gem 'cancancan'
 # Use boostrap gem
 gem 'bootstrap', '~> 5.1.3'
 
+gem 'rswag'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
