@@ -1,5 +1,7 @@
 # BLOgy
-> The Blog app will be a classic example of a blog website. I will create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> The Blog app is a classic example of a blog website. It is a functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+
+![image](https://user-images.githubusercontent.com/78906545/173846961-bae022ee-8f15-44a3-9313-ec1e1119ebc1.png)
 
 
 Projects list
@@ -27,6 +29,31 @@ I will be building the Blog app for three weeks. Here is the list of projects th
 - Run `rails s` to start  the server
 - Open `https://localhost:3000` in your browser
 - to run test `bundle exec rspec`
+
+## Tests
+Diffult (run all spec files):
+
+`bundle exec rspec`
+
+Run all spec files in the `Spec` folder:
+
+`bundle exec rspec spec`
+
+Run all spec files in a single directory:
+
+`bundle exec rspec spec/models`
+
+Run a single spec file:
+
+`bundle exec rspec spec/views/login_page_spec.rb`
+
+Run a single example from a spec file(by line number):
+
+`bundle exec rspec spec/controllers/users_controller_spec.rb:8`
+
+See all options for running specs:
+
+`bundle exec rspec --help`
 
 ## Authors
 
