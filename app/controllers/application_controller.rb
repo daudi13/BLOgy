@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   def authorize_request
     header = request.headers['Authorization']
     header = header.split.last if header
